@@ -1,0 +1,19 @@
+{
+  "name": "mesh-poker",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "dev:ui": "cd ui && npm run dev",
+    "build:zomes": "CARGO_TARGET_DIR=target cargo build --release --target wasm32-unknown-unknown",
+    "build:dna": "npm run build:zomes && hc dna pack ./dnas/poker/workdir",
+    "build:happ": "npm run build:dna && hc app pack ./workdir",
+    "build:ui": "cd ui && npm run build && cd dist && zip -r ../dist.zip . && cd ../..",
+    "build:web-happ": "npm run build:ui && npm run build:happ && hc web-app pack workdir",
+    "weave:alice": "npx @theweave/cli --agent-idx 1 --dev-config ./weave.dev.config.ts",
+    "weave:bob": "npx @theweave/cli --agent-idx 2 --dev-config ./weave.dev.config.ts"
+  },
+  "devDependencies": {
+    "@theweave/cli": "^0.15.0",
+    "typescript": "^5.3.0"
+  }
+}

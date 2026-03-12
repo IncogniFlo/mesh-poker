@@ -1,0 +1,7 @@
+---
+manifest_version: "0"
+name: mesh_poker
+ui:
+  path: "../ui/dist.zip"
+happ:
+  path: "./mesh_poker.happ"

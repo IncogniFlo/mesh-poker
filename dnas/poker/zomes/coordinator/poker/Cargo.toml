@@ -1,0 +1,13 @@
+[package]
+edition = "2021"
+name = "poker"
+version = "0.0.1"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+name = "poker"
+
+[dependencies]
+hdk = { workspace = true }
+serde = { workspace = true }
+getrandom = { version = "0.3", features = ["wasm_js"] }

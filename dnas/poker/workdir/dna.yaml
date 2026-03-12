@@ -1,0 +1,13 @@
+---
+manifest_version: "0"
+name: poker
+integrity:
+  network_seed: ~
+  properties: ~
+  zomes: []
+
+coordinator:
+  zomes:
+    - name: poker
+      path: ../../../target/wasm32-unknown-unknown/release/poker.wasm
+      dependencies: []

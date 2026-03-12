@@ -1,0 +1,16 @@
+---
+manifest_version: "0"
+name: mesh_poker
+description: Planning Poker applet for The Weave / Moss
+roles:
+  - name: poker
+    provisioning:
+      strategy: create
+      deferred: false
+    dna:
+      path: "../dnas/poker/workdir/poker.dna"
+      modifiers:
+        network_seed: ~
+        properties: ~
+      version: ~
+      clone_limit: 0
